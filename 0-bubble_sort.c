@@ -9,15 +9,15 @@
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, size_clone = size;
-	bool swapped;
+	bool changed = false;
 	int temp;
 
 	if (array == NULL || size < 2)
 		return;
 
-	while (swapped == false)
+	while (changed == false)
 	{
-		swapped = true;
+		changed = true;
 		for (i = 0; i < size_clone - 1; i++)
 		{
 			if (array[i] > array[i + 1])
@@ -27,7 +27,7 @@ void bubble_sort(int *array, size_t size)
 				array[i + 1] = temp;
 
 				print_array(array, size);
-				swapped = false;
+				changed = false;
 			}
 		}
 
